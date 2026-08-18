@@ -1,6 +1,7 @@
+import math
 import unittest
 
-from calculator import add, divide, mod, multiply, power, sqrt, subtract
+from calculator import add, cos, divide, mod, multiply, power, sin, sqrt, subtract
 
 
 class TestAdd(unittest.TestCase):
@@ -87,6 +88,28 @@ class TestMod(unittest.TestCase):
     def test_modulo_by_zero_raises(self):
         with self.assertRaises(ZeroDivisionError):
             mod(10, 0)
+
+
+class TestSin(unittest.TestCase):
+    def test_sin_of_zero(self):
+        self.assertAlmostEqual(sin(0), 0)
+
+    def test_sin_of_pi_over_two(self):
+        self.assertAlmostEqual(sin(math.pi / 2), 1)
+
+    def test_sin_of_pi(self):
+        self.assertAlmostEqual(sin(math.pi), 0, places=6)
+
+
+class TestCos(unittest.TestCase):
+    def test_cos_of_zero(self):
+        self.assertAlmostEqual(cos(0), 1)
+
+    def test_cos_of_pi_over_two(self):
+        self.assertAlmostEqual(cos(math.pi / 2), 0, places=6)
+
+    def test_cos_of_pi(self):
+        self.assertAlmostEqual(cos(math.pi), -1)
 
 
 if __name__ == "__main__":
