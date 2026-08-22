@@ -112,5 +112,8 @@ class TestCos(unittest.TestCase):
         self.assertAlmostEqual(cos(math.pi), -1)
 
 
+"""
+    Comment
+"""
 if __name__ == "__main__":
     unittest.main()

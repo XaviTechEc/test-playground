@@ -12,4 +12,5 @@ function fibonacci(n) {
 
 // Example usage:
 const num = 6;
+
 console.log(`Fibonacci of ${num} is: ${fibonacci(num)}`);
